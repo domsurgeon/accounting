@@ -1,0 +1,25 @@
+{
+  "name": "accounting-api",
+  "version": "1.0.0",
+  "description": "Accounting notebook's API",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -f npm-*.log && rm -f package-lock.json && rm -rf node_modules && npm cache verify",
+    "lint": "npx standard --fix",
+    "nuke": "npm run clean && npm install",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "upgrade": "npx upgradeps -n"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "gradient-string": "^1.2.0",
+    "http-errors": "^1.7.3",
+    "morgan": "^1.10.0"
+  },
+  "author": "Matias Arcaya <matias.aa@gmail.com>",
+  "license": "UNLICENSED",
+  "private": true
+}
