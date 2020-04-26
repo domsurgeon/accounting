@@ -30,8 +30,16 @@ router.get('/balance', async (req, res) => {
 router.post('/setOperation', async (req, res) => {
     let date = new Date() * 1
     const op = {...req.body, date }
+    const isCredit = req.body.type === 'credit'
     
-    operations.push( op )
+    if( isCredit || req.body.amount <= balance ){
+      if( isCredit )
+        balance += req.body.amount
+      else
+        balance -= req.body.amount
+
+      operations.push( op )
+    }
     res.sendStatus(200)
   }
 )
